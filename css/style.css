@@ -1,3 +1,54 @@
+body {
+	background: #DFEBED;
+	margin: 0; 
+	padding: 0;
+}
+header {
+	background: #2B4450;
+	box-shadow: 0 0 15px 0 rgba(0,0,0,0.25); 
+}
+header h1 {
+	color: #fff;
+	text-transform: lowercase;
+	font-family: 'Helvetica', 'Arial', sans-serif;
+	font-weight: 400;
+	font-size: 22px;
+	letter-spacing: 1px;
+	display: inline-block;
+	text-align: center;
+	margin: 0;
+	padding: 15px 0;
+	width: 100%;
+}
+
+#inbox {
+	margin: 10px;
+	background: #fff;
+	font-family: 'Helvetica', 'Arial', sans-serif;
+}
+#inbox tr:first-child {
+	background: #f1f1f1;
+/* 	padding: px 0; */
+}
+#inbox tr {
+	padding: 10px 0;
+	border: 1px solid #333;
+}
+#inbox th {
+	padding: 10px;
+}
+#inbox th:first-child{
+	width: 20%;
+}
+#inbox th:nth-child(2){
+	width: 20%;
+}
+#inbox th:nth-child(2){
+	width: 60%;
+}
+.body {
+	width: 100%;
+}
 .message {
 	display: none;
 }
