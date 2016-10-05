@@ -8,18 +8,37 @@
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
   			var table = document.getElementById('inbox');
 				function fillInbox(messageNumber){
+					//to create the preview subject line
 					var row = table.insertRow(1);
 					row.className = 'subject-line';
-					var rowBody = table.insertRow(2);
+
+						
 					var cell1 = row.insertCell(0); //date
+					cell1.className  = 'date-cell column';
+					
 					var cell2 = row.insertCell(1); //sender
+					cell2.className  = 'sender-cell column';
+
 					var cell3 = row.insertCell(2); //subject
+					cell3.className  = 'subject-cell column';
+
+					//to create the message
+					var rowBody = table.insertRow(2);
 					var body = rowBody.insertCell(0); //body odd row
-					body.className = 'message';
+					body.className = 'message hide';
+
 					cell1.innerHTML = geemails[messageNumber].date; //date
 					cell2.innerHTML = geemails[messageNumber].sender; //sender
 					cell3.innerHTML = geemails[messageNumber].subject; //subject
-					body.innerHTML = geemails[messageNumber].body; //body			
+					body.innerHTML = geemails[messageNumber].body; //body		
+
+					function toggleMessage() {
+   		 				body.classList.add('show');
+						}
+						row.onclick = function() {
+						toggleMessage();
+						};
+						
 				};
 				for (var j = 0; j < geemails.length; j++){
 					fillInbox(j);
@@ -27,7 +46,8 @@
 				// fillInbox(0);
 				// fillInbox(1);
 				// fillInbox(2);
-
+				
+				
 				
       };
     </script>
@@ -55,7 +75,7 @@
 			</div> -->
 
 		<table id="inbox">
-			<tr>
+			<tr id="inbox-header">
 				<th>Date</th>
 				<th>Sender</th>
 				<th>Subject</th>

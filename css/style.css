@@ -3,6 +3,12 @@ body {
 	margin: 0; 
 	padding: 0;
 }
+.hide {
+	display: none;
+}
+.show {
+	display: block
+}
 header {
 	background: #2B4450;
 	box-shadow: 0 0 15px 0 rgba(0,0,0,0.25); 
@@ -26,9 +32,34 @@ header h1 {
 	background: #fff;
 	font-family: 'Helvetica', 'Arial', sans-serif;
 }
-#inbox tr:first-child {
+th {
+	background: #f0f0f0;
+	padding: 5px 10px;
+	/*text-transform: uppercase;*/
+	font-weight: 400;
+	text-align: left;
+	font-size: 10pt;
+	/*letter-spacing: 1px;*/
+
+}
+.column {
+	padding: 10px;
+}
+.date-cell {
+	width: 20%;
+}
+.sender-cell {
+	width: 30%;
+}
+.subject-cell {
+	width: 50%;
+}
+.subject-line:hover {
+	background-color: #eee;
+	cursor: pointer;
+}
+/*#inbox tr:first-child {
 	background: #f1f1f1;
-/* 	padding: px 0; */
 }
 #inbox tr {
 	padding: 10px 0;
@@ -45,10 +76,10 @@ header h1 {
 }
 #inbox th:nth-child(2){
 	width: 60%;
-}
-.body {
+}*/
+/*.body {
 	width: 100%;
-}
+}*/
 .message {
-	display: none;
+	/*display: none;*/
 }
