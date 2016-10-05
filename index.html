@@ -7,25 +7,27 @@
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
   			var table = document.getElementById('inbox');
-        var messageCount = Math.floor(Math.random() * 20);
-				for (var i = 0; i < messageCount; i++) {
-					var row = table.insertRow(1);
-					var rowBody = table.insertRow(2);
-					var cell1 = row.insertCell(0); //date
-					var cell2 = row.insertCell(1); //sender
-					var cell3 = row.insertCell(2); //subject
-					var body = rowBody.insertCell(0); //body odd row
-					cell1.innerHTML = getNewMessage.date;
-					cell2.innerHTML = getNewMessage.sender;
-					cell3.innerHTML = getNewMessage.subject;
-					body.innerHTML = getNewMessage.body;			
+				function fillInbox(messageNumber){
+					table.insertRow(1).innerHTML = geemails[messageNumber].date;
+					table.insertRow(1).innerHTML = geemails[messageNumber].sender;
+					table.insertRow(2).innerHTML = geemails[messageNumber].subject;
+				};
+				for (var j = 0; j < geemails.length; j++){
+					fillInbox(j);
 				}
+				// fillInbox(0);
+				// fillInbox(1);
+				// fillInbox(2);
+
+				
       };
     </script>
 	</head>
 	<body>
 		<header>
 			<h1>Gee-mail</h1>
+			<div id="test"></div>
+			<div id="test2"></div>
 		</header>
 		<div class="container">
 		<table id="inbox">
