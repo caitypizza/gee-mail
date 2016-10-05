@@ -6,7 +6,20 @@
       window.onload = function(){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-        
+  			var table = document.getElementById('inbox');
+        var messageCount = Math.floor(Math.random() * 20);
+				for (var i = 0; i < messageCount; i++) {
+					var row = table.insertRow(1);
+					var rowBody = table.insertRow(2);
+					var cell1 = row.insertCell(0); //date
+					var cell2 = row.insertCell(1); //sender
+					var cell3 = row.insertCell(2); //subject
+					var body = rowBody.insertCell(0); //body odd row
+					cell1.innerHTML = getNewMessage.date;
+					cell2.innerHTML = getNewMessage.sender;
+					cell3.innerHTML = getNewMessage.subject;
+					body.innerHTML = getNewMessage.body;			
+				}
       };
     </script>
 	</head>
@@ -14,31 +27,23 @@
 		<header>
 			<h1>Gee-mail</h1>
 		</header>
-		<div class="container" id="main">
-			<div class="content">
-				<div class="row label">
-					<span class="title column date">
-						Date
-					</span>
-					<span class="title column sender">
-						Sender
-					</span>
-					<span class="title column subject">
-						Subject
-					</span>
-				</div>
-				<div class="row details">
-					<span class="column date">
-					</span>
-					<span class="column sender">
-					</span>
-					<span class="column subject">
-					</span>
-				</div>
-				<div class="row body message">
-					
-				</div>
-			</div>
+		<div class="container">
+		<table id="inbox">
+			<tr>
+				<th>Date</th>
+				<th>Sender</th>
+				<th>Subject</th>
+			</tr>
+			<tr>
+				<td class="date"> </td>
+				<td class="sender"></td>
+				<td class="subject"></td>
+				<td class="body"></td>
+			</tr>
+			<tr>
+				<td class="body"></td>
+			</tr>
+		</table>
 		</div>
 	</body>
 </html>
