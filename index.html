@@ -7,12 +7,11 @@
       window.onload = function(){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-  			var table = document.getElementById('inbox');
+ 				var table = document.getElementById('inbox');
 				function fillInbox(messageNumber){
 					//to create the preview subject line
 					var row = table.insertRow(1);
 					row.className = 'subject-line';
-
 						
 					var cell1 = row.insertCell(0); //date
 					cell1.className  = 'date-cell column';
@@ -26,35 +25,18 @@
 					//to create the message
 					var rowBody = table.insertRow(2);
 					var body = rowBody.insertCell(0); //body odd row
-					body.className = 'message';
+					body.colSpan = 3;
+					rowBody.className = 'message';
 
 					cell1.innerHTML = geemails[messageNumber].date; //date
 					cell2.innerHTML = geemails[messageNumber].sender; //sender
 					cell3.innerHTML = geemails[messageNumber].subject; //subject
 					body.innerHTML = geemails[messageNumber].body; //body		
-
-					//straight js toggle
-					// function toggleMessage() {
-   		//  				// body.classList.add('show');
-   		//  				// if (body.hasClass('show')){
-   		//  				// 	body.classList.remove('show');
-   		//  				// 	body.classList.add('hide');
-   		//  				// }
-   		//  				if(body.style.display = 'none'){
-   		//  					body.style.display = 'block';
-   		//  				}
-   		//  				else {
-   		//  					body.style.display = 'none';
-   		//  				}
-					// 	}
-					// 	row.onclick = function() {
-					// 	toggleMessage();
-					// 	};
-						
 				};
 				$(document).ready(function(){
 					$('.subject-line').click(function(){
-						$('.message').toggle();
+						// $('.subject-line + .message').toggle();
+						$(this).next().toggle();
 					});	
 				});
 				
@@ -75,37 +57,12 @@
 			<h1>Gee-mail</h1>
 		</header>
 		<div class="container">
-			<!-- <div id="inbox">
-				<div id="inbox-items">
-					<div class="date">
-						Date
-					</div>
-					<div class="sender">
-						Sender
-					</div>
-					<div class="subject">
-						Subject
-					</div>
-				</div> --> <!-- end of inbox items -->
-				<!-- <div class="subject-line">
-				</div>
-				<div class="body"></div>
-			</div> -->
 
 		<table id="inbox">
 			<tr id="inbox-header">
 				<th>Date</th>
 				<th>Sender</th>
 				<th>Subject</th>
-			</tr>
-			<tr>
-				<td class="date"> </td>
-				<td class="sender"></td>
-				<td class="subject"></td>
-				<td class="body"></td>
-			</tr>
-			<tr>
-				<td class="body"></td>
 			</tr>
 		</table>
 		</div>
