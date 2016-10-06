@@ -1,5 +1,6 @@
 <html>
 	<head>
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
 		<script src="js/mail-generator.js"></script>
 		<link href="css/style.css" rel="stylesheet" media="screen">
     <script>
@@ -33,7 +34,17 @@
 					body.innerHTML = geemails[messageNumber].body; //body		
 
 					function toggleMessage() {
-   		 				body.classList.add('show');
+   		 				// body.classList.add('show');
+   		 				// if (body.hasClass('show')){
+   		 				// 	body.classList.remove('show');
+   		 				// 	body.classList.add('hide');
+   		 				// }
+   		 				if(body.style.display = 'none'){
+   		 					body.style.display = 'block';
+   		 				}
+   		 				else {
+   		 					body.style.display = 'none';
+   		 				}
 						}
 						row.onclick = function() {
 						toggleMessage();
