@@ -37,6 +37,7 @@
 					$('.subject-line').click(function(){
 						// $('.subject-line + .message').toggle();
 						$(this).next().toggle();
+						$(this).toggleClass('active');
 					});	
 				});
 				
@@ -44,6 +45,7 @@
 				for (var j = 0; j < geemails.length; j++){
 					fillInbox(j);
 				}
+				document.getElementById('inbox-count').innerHTML=geemails.length;
 				// fillInbox(0);
 				// fillInbox(1);
 				// fillInbox(2);
@@ -55,6 +57,8 @@
 	<body>
 		<header>
 			<h1>Gee-mail</h1>
+			<div id="inbox-count">
+			</div>
 		</header>
 		<div class="container">
 
