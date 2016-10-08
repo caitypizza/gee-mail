@@ -22,9 +22,8 @@ header h1 {
 	letter-spacing: 1px;
 	display: inline-block;
 	text-align: center;
+	padding: 15px 0 15px 20px;
 	margin: 0;
-	padding: 15px 0;
-	width: 100%;
 }
 
 #inbox {
@@ -65,28 +64,16 @@ th {
 .active {
 	background: #eee;
 }
-/*#inbox tr:first-child {
-	background: #f1f1f1;
-}
-#inbox tr {
-	padding: 10px 0;
-	border: 1px solid #333;
-}
-#inbox th {
-	padding: 10px;
-}
-#inbox th:first-child{
-	width: 20%;
-}
-#inbox th:nth-child(2){
-	width: 20%;
-}
-#inbox th:nth-child(2){
-	width: 60%;
-}*/
-/*.body {
-	width: 100%;
-}*/
 .message {
 	display: none;
+}
+#inbox-count {
+	display: inline-block;
+	font-family: 'Helvetica', 'Arial', sans-serif;
+	float: right;
+	color: #fff;
+	background: #1b2a32;
+	border-radius: 50%;
+	padding: 10px;
+	margin: 8px 18px 0 0;
 }
